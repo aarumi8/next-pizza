@@ -18,14 +18,14 @@ export const Header: React.FC<Props> = ({ className }) => {
                     <Image src="/logo.png" alt="logo" width={35} height={35} />
                     <div>
                         <h1 className="text-2xl uppercase font-black">Next Pizza</h1>
-                        <p className="text-sm text-gray-400 leading-3">so tasty</p>
+                        <p className="text-sm text-gray-400 leading-3">mmm, so much tasty!</p>
                     </div>
                 </div>
 
                 <div className="flex items-center gap-3">
                     <Button variant="outline" className="flex items-center gap-1">
                         <User size={16} />
-                        Войти
+                        Sign In
                     </Button>
 
                     <div>
