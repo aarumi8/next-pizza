@@ -31,19 +31,19 @@ export default function Home() {
                     imageUrl: "https://media.dodostatic.net/image/r:584x584/11EEF9E43DC39C94AA5765DBF1C97100.avif"
                   },
                   {
-                    id: 1,
+                    id: 2,
                     name: "Mozarella",
                     price: 550,
                     imageUrl: "https://media.dodostatic.net/image/r:584x584/11EEF9E43DC39C94AA5765DBF1C97100.avif"
                   },
                   {
-                    id: 1,
+                    id: 3,
                     name: "Mozarella",
                     price: 550,
                     imageUrl: "https://media.dodostatic.net/image/r:584x584/11EEF9E43DC39C94AA5765DBF1C97100.avif"
                   },
                   {
-                    id: 1,
+                    id: 4,
                     name: "Mozarella",
                     price: 550,
                     imageUrl: "https://media.dodostatic.net/image/r:584x584/11EEF9E43DC39C94AA5765DBF1C97100.avif"
@@ -52,64 +52,34 @@ export default function Home() {
                 categoryId={1}
               />
               <ProductsGroupList
-                title="Breakfast"
+                title="Combo"
                 items={[
                   {
-                    id: 1,
+                    id: 5,
                     name: "Mozarella",
                     price: 550,
                     imageUrl: "https://media.dodostatic.net/image/r:584x584/11EEF9E43DC39C94AA5765DBF1C97100.avif"
                   },
                   {
-                    id: 1,
+                    id: 6,
                     name: "Mozarella",
                     price: 550,
                     imageUrl: "https://media.dodostatic.net/image/r:584x584/11EEF9E43DC39C94AA5765DBF1C97100.avif"
                   },
                   {
-                    id: 1,
+                    id: 7,
                     name: "Mozarella",
                     price: 550,
                     imageUrl: "https://media.dodostatic.net/image/r:584x584/11EEF9E43DC39C94AA5765DBF1C97100.avif"
                   },
                   {
-                    id: 1,
+                    id: 8,
                     name: "Mozarella",
                     price: 550,
                     imageUrl: "https://media.dodostatic.net/image/r:584x584/11EEF9E43DC39C94AA5765DBF1C97100.avif"
                   }
                 ]}
-                categoryId={1}
-              />
-              <ProductsGroupList
-                title="Dinner"
-                items={[
-                  {
-                    id: 1,
-                    name: "Mozarella",
-                    price: 550,
-                    imageUrl: "https://media.dodostatic.net/image/r:584x584/11EEF9E43DC39C94AA5765DBF1C97100.avif"
-                  },
-                  {
-                    id: 1,
-                    name: "Mozarella",
-                    price: 550,
-                    imageUrl: "https://media.dodostatic.net/image/r:584x584/11EEF9E43DC39C94AA5765DBF1C97100.avif"
-                  },
-                  {
-                    id: 1,
-                    name: "Mozarella",
-                    price: 550,
-                    imageUrl: "https://media.dodostatic.net/image/r:584x584/11EEF9E43DC39C94AA5765DBF1C97100.avif"
-                  },
-                  {
-                    id: 1,
-                    name: "Mozarella",
-                    price: 550,
-                    imageUrl: "https://media.dodostatic.net/image/r:584x584/11EEF9E43DC39C94AA5765DBF1C97100.avif"
-                  }
-                ]}
-                categoryId={1}
+                categoryId={2}
               />
             </div>
           </div>
