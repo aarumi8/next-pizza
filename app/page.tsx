@@ -1,5 +1,7 @@
 import { Container } from "@/components/shared/container";
 import { Filters } from "@/components/shared/filters";
+import { ProductCard } from "@/components/shared/product-card";
+import { ProductsGroupList } from "@/components/shared/products-group-list";
 import { Title } from "@/components/shared/title";
 import { TopBar } from "@/components/shared/top-bar";
 
@@ -18,7 +20,98 @@ export default function Home() {
           </div>
 
           <div className="flex-1">
-            <div className="flex flex-col gap-16">Products list</div>
+            <div className="flex flex-col gap-16">
+              <ProductsGroupList
+                title="Pizzas"
+                items={[
+                  {
+                    id: 1,
+                    name: "Mozarella",
+                    price: 550,
+                    imageUrl: "https://media.dodostatic.net/image/r:584x584/11EEF9E43DC39C94AA5765DBF1C97100.avif"
+                  },
+                  {
+                    id: 1,
+                    name: "Mozarella",
+                    price: 550,
+                    imageUrl: "https://media.dodostatic.net/image/r:584x584/11EEF9E43DC39C94AA5765DBF1C97100.avif"
+                  },
+                  {
+                    id: 1,
+                    name: "Mozarella",
+                    price: 550,
+                    imageUrl: "https://media.dodostatic.net/image/r:584x584/11EEF9E43DC39C94AA5765DBF1C97100.avif"
+                  },
+                  {
+                    id: 1,
+                    name: "Mozarella",
+                    price: 550,
+                    imageUrl: "https://media.dodostatic.net/image/r:584x584/11EEF9E43DC39C94AA5765DBF1C97100.avif"
+                  }
+                ]}
+                categoryId={1}
+              />
+              <ProductsGroupList
+                title="Breakfast"
+                items={[
+                  {
+                    id: 1,
+                    name: "Mozarella",
+                    price: 550,
+                    imageUrl: "https://media.dodostatic.net/image/r:584x584/11EEF9E43DC39C94AA5765DBF1C97100.avif"
+                  },
+                  {
+                    id: 1,
+                    name: "Mozarella",
+                    price: 550,
+                    imageUrl: "https://media.dodostatic.net/image/r:584x584/11EEF9E43DC39C94AA5765DBF1C97100.avif"
+                  },
+                  {
+                    id: 1,
+                    name: "Mozarella",
+                    price: 550,
+                    imageUrl: "https://media.dodostatic.net/image/r:584x584/11EEF9E43DC39C94AA5765DBF1C97100.avif"
+                  },
+                  {
+                    id: 1,
+                    name: "Mozarella",
+                    price: 550,
+                    imageUrl: "https://media.dodostatic.net/image/r:584x584/11EEF9E43DC39C94AA5765DBF1C97100.avif"
+                  }
+                ]}
+                categoryId={1}
+              />
+              <ProductsGroupList
+                title="Dinner"
+                items={[
+                  {
+                    id: 1,
+                    name: "Mozarella",
+                    price: 550,
+                    imageUrl: "https://media.dodostatic.net/image/r:584x584/11EEF9E43DC39C94AA5765DBF1C97100.avif"
+                  },
+                  {
+                    id: 1,
+                    name: "Mozarella",
+                    price: 550,
+                    imageUrl: "https://media.dodostatic.net/image/r:584x584/11EEF9E43DC39C94AA5765DBF1C97100.avif"
+                  },
+                  {
+                    id: 1,
+                    name: "Mozarella",
+                    price: 550,
+                    imageUrl: "https://media.dodostatic.net/image/r:584x584/11EEF9E43DC39C94AA5765DBF1C97100.avif"
+                  },
+                  {
+                    id: 1,
+                    name: "Mozarella",
+                    price: 550,
+                    imageUrl: "https://media.dodostatic.net/image/r:584x584/11EEF9E43DC39C94AA5765DBF1C97100.avif"
+                  }
+                ]}
+                categoryId={1}
+              />
+            </div>
           </div>
 
         </div>
