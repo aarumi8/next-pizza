@@ -36,9 +36,9 @@ export const ProductsGroupList: React.FC<Props> = ({ title, items, categoryId, c
                     <ProductCard
                         key={item.id}
                         id={item.id}
-                        name="Маргарита"
-                        imageUrl="https://media.dodostatic.net/image/r:292x292/11EE7D610BBEB562BD4D48786AD87270.webp"
-                        price={390}
+                        name={item.name}
+                        imageUrl={item.imageUrl}
+                        price={item.items[0].price}
                     />
                 ))}
             </div>

@@ -4,14 +4,27 @@ import { ProductCard } from "@/components/shared/product-card";
 import { ProductsGroupList } from "@/components/shared/products-group-list";
 import { Title } from "@/components/shared/title";
 import { TopBar } from "@/components/shared/top-bar";
+import { prisma } from "@/prisma/prisma-client";
 
-export default function Home() {
+export default async function Home() {
+
+  const categoris = await prisma.category.findMany({
+    include: {
+      products: {
+        include: {
+          ingredients: true,
+          items: true
+        }
+      }
+    }
+  });
+
   return (
     <>
       <Container className="mt-10">
         <Title text="All pizzas" size="lg" className="font-extrabold" />
       </Container>
-      <TopBar />
+      <TopBar categories={categoris.filter((category) => category.products.length > 0)} />
 
       <Container className="pb-14 mt-10">
         <div className="flex gap-[60px]">
@@ -21,66 +34,18 @@ export default function Home() {
 
           <div className="flex-1">
             <div className="flex flex-col gap-16">
-              <ProductsGroupList
-                title="Pizzas"
-                items={[
-                  {
-                    id: 1,
-                    name: "Mozarella",
-                    price: 550,
-                    imageUrl: "https://media.dodostatic.net/image/r:584x584/11EEF9E43DC39C94AA5765DBF1C97100.avif"
-                  },
-                  {
-                    id: 2,
-                    name: "Mozarella",
-                    price: 550,
-                    imageUrl: "https://media.dodostatic.net/image/r:584x584/11EEF9E43DC39C94AA5765DBF1C97100.avif"
-                  },
-                  {
-                    id: 3,
-                    name: "Mozarella",
-                    price: 550,
-                    imageUrl: "https://media.dodostatic.net/image/r:584x584/11EEF9E43DC39C94AA5765DBF1C97100.avif"
-                  },
-                  {
-                    id: 4,
-                    name: "Mozarella",
-                    price: 550,
-                    imageUrl: "https://media.dodostatic.net/image/r:584x584/11EEF9E43DC39C94AA5765DBF1C97100.avif"
-                  }
-                ]}
-                categoryId={1}
-              />
-              <ProductsGroupList
-                title="Combo"
-                items={[
-                  {
-                    id: 5,
-                    name: "Mozarella",
-                    price: 550,
-                    imageUrl: "https://media.dodostatic.net/image/r:584x584/11EEF9E43DC39C94AA5765DBF1C97100.avif"
-                  },
-                  {
-                    id: 6,
-                    name: "Mozarella",
-                    price: 550,
-                    imageUrl: "https://media.dodostatic.net/image/r:584x584/11EEF9E43DC39C94AA5765DBF1C97100.avif"
-                  },
-                  {
-                    id: 7,
-                    name: "Mozarella",
-                    price: 550,
-                    imageUrl: "https://media.dodostatic.net/image/r:584x584/11EEF9E43DC39C94AA5765DBF1C97100.avif"
-                  },
-                  {
-                    id: 8,
-                    name: "Mozarella",
-                    price: 550,
-                    imageUrl: "https://media.dodostatic.net/image/r:584x584/11EEF9E43DC39C94AA5765DBF1C97100.avif"
-                  }
-                ]}
-                categoryId={2}
-              />
+              {
+                categoris.map((category) => (
+                  category.products.length > 0 && (
+                    <ProductsGroupList
+                      key={category.id}
+                      title={category.name}
+                      categoryId={category.id}
+                      items={category.products}
+                    />
+                  )
+                ))
+              }              
             </div>
           </div>
 
