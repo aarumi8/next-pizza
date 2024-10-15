@@ -84,7 +84,7 @@ export async function createOrder(data: CheckoutFormValues) {
     const paymentData = await createPayment({
       amount: order.totalAmount,
       orderId: order.id,
-      description: 'Оплата заказа #' + order.id,
+      description: 'Pay order #' + order.id,
     });
 
     if (!paymentData) {
@@ -104,7 +104,7 @@ export async function createOrder(data: CheckoutFormValues) {
 
     await sendEmail(
       data.email,
-      'Next Pizza / Оплатите заказ #' + order.id,
+      'Next Pizza / Pay order #' + order.id,
       PayOrderTemplate({
         orderId: order.id,
         totalAmount: order.totalAmount,

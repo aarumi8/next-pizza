@@ -83,10 +83,10 @@ export default function CheckoutPage() {
       <Title text="Order creation" className="font-extrabold mb-8 text-[36px]" />
 
       <FormProvider {...form}>
-        <form>
-          <div className="flex gap-10">
+        <form onSubmit={form.handleSubmit(onSubmit)}>
+          <div className="flex gap-10 flex-col lg:flex-row">
             {/* Левая часть */}
-            <div className="flex flex-col gap-10 flex-1 mb-20">
+            <div className="flex flex-col gap-10 flex-1 lg:mb-20">
               <CheckoutCart
                 onClickCountButton={onClickCountButton}
                 removeCartItem={removeCartItem}
@@ -100,7 +100,7 @@ export default function CheckoutPage() {
             </div>
 
             {/* Правая часть */}
-            <div className="w-[450px]">
+            <div className="lg:w-[450px]">
               <CheckoutSidebar totalAmount={totalAmount} loading={loading || submitting} />
             </div>
           </div>

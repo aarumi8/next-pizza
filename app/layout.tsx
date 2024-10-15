@@ -20,7 +20,7 @@ export default function RootLayout({
       <head>
         <link data-rh="true" rel="icon" href="/logo.png" />
       </head>
-      <body className={cn('p-3 xl:p-0', nunito.className)}>
+      <body className={cn('', nunito.className)}>
         <Providers>{children}</Providers>
       </body>
     </html>

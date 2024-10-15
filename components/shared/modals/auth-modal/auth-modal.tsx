@@ -25,7 +25,7 @@ export const AuthModal: React.FC<Props> = ({ open, onClose }) => {
 
   return (
     <Dialog open={open} onOpenChange={handleClose}>
-      <DialogContent className="w-[450px] bg-white p-10">
+      <DialogContent className="w-[90%] lg:w-[450px] bg-white p-10 overflow-y-scroll max-h-screen">
         {type === 'login' ? (
           <LoginForm onClose={handleClose} />
         ) : (
