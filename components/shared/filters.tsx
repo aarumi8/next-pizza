@@ -6,30 +6,42 @@ import { Input } from '../ui/input';
 import { RangeSlider } from './range-slider';
 import { CheckboxFiltersGroup } from './checkbox-filters-group';
 import { useQueryFilters, useIngredients, useFilters } from '@/hooks';
+import { Button } from '../ui/button';
+import { useMediaQuery } from '@/hooks/use-media-query';
 
 interface Props {
   className?: string;
 }
 
 export const Filters: React.FC<Props> = ({ className }) => {
+  const [showFilters, setShowFilters] = React.useState(false);
   const { ingredients, loading } = useIngredients();
   const filters = useFilters();
+  const isDesktop = useMediaQuery('(min-width: 1024px)');
 
   useQueryFilters(filters);
+
+  React.useEffect(() => {
+    if (isDesktop) {
+      setShowFilters(true);
+    } else {
+      setShowFilters(false);
+    }
+  }, [isDesktop]);
 
   const items = ingredients.map((item: any) => ({ value: String(item.id), text: item.name }));
 
   const updatePrices = (prices: number[]) => {
-    console.log(prices, 999);
     filters.setPrices('priceFrom', prices[0]);
     filters.setPrices('priceTo', prices[1]);
   };
 
-  return (
-    <div className={className}>
-      <Title text="Filters" size="sm" className="mb-5 font-bold" />
+  const toggleFilters = () => {
+    setShowFilters((prev) => !prev);
+  }
 
-      {/* Top checkboxes */}
+  const renderFilters = () => (
+    <>
       <CheckboxFiltersGroup
         title="Pizza type"
         name="pizzaTypes"
@@ -55,7 +67,6 @@ export const Filters: React.FC<Props> = ({ className }) => {
         ]}
       />
 
-      {/* Filter prices */}
       <div className="mt-5 border-y border-y-neutral-100 py-6 pb-7">
         <p className="font-bold mb-3">Price from and to:</p>
         <div className="flex gap-3 mb-5">
@@ -97,6 +108,21 @@ export const Filters: React.FC<Props> = ({ className }) => {
         onClickCheckbox={filters.setSelectedIngredients}
         selected={filters.selectedIngredients}
       />
+    </>
+  );
+
+  return (
+    <div className={className}>
+      <div className='flex justify-between items-center mb-5'>
+        <Title text="Filters" size="sm" className="font-bold" />
+        {!isDesktop && (
+          <Button onClick={toggleFilters} variant="outline" size="sm">
+            {showFilters ? 'Hide filters' : 'Show filters'}
+          </Button>
+        )}
+      </div>
+
+      {(showFilters || isDesktop) && renderFilters()}
     </div>
   );
 };

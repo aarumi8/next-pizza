@@ -21,9 +21,9 @@ export default async function Home({ searchParams }: { searchParams: GetSearchPa
       {/* <Stories /> */}
 
       <Container className="mt-10 pb-14">
-        <div className="flex gap-[80px]">
+        <div className="flex gap-[80px] flex-col lg:flex-row">
           {/* Фильтрация */}
-          <div className="w-[250px]">
+          <div className="xl:w-[250px] xl:block">
             <Suspense>
               <Filters />
             </Suspense>

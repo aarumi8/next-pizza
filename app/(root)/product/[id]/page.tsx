@@ -26,7 +26,7 @@ export default async function ProductPage({ params: { id } }: { params: { id: st
   }
 
   return (
-    <Container className="flex flex-col my-10">
+    <Container className="flex flex-col lg:my-10">
       <ProductForm product={product} />
     </Container>
   );
