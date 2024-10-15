@@ -8,9 +8,9 @@ interface Props {
 
 export const OrderSuccessTemplate: React.FC<Props> = ({ orderId, items }) => (
   <div>
-    <h1>Спасибо за покупку! 🎉</h1>
+    <h1>Thanks for your order! 🎉</h1>
 
-    <p>Ваш заказ #{orderId} оплачен. Список товаров:</p>
+    <p>Your order #{orderId} was paid. Products list:</p>
 
     <hr />
 
