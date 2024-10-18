@@ -4,7 +4,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 This is a demo app of the full stack e-commerce store for ordering food where users can choose pizzas or products, add them to a cart, make an order and sign in to the app to see the saved orders. The app is working all you need to do is paste your .env variables to YooKassa provider(payment gateway) and Postgres DB.
 
-Built using Next.js App Router, Zustand, Prisma, NextAuth, React Hook Form, ShadCN and TailwindCSS.
+Built using Next.js App Router, Zustand, Prisma, NextAuth, React Hook Form, ShadCN and TailwindCSS. The app is deployed on Vercel - https://next-pizza-theta-pied.vercel.app
 
 **Main page**
 
